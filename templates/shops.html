@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Shop</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">{{ court.name }} - Shops</h1>
+        <div class="card-list">
+            {% for shop in court.shops %}
+            <a class="card" href="/foodcourts/{{ court.id }}/{{ shop.id }}">
+                <div class="card-title">{{ shop.name }}</div>
+            </a>
+            {% endfor %}
+        </div>
+        <a href="/foodcourts" class="back-link">Back to Food Courts</a>
+    </div>
+</body>
+</html>

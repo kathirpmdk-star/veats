@@ -1,0 +1,159 @@
+body {
+    background: #fff5e6;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.container {
+    max-width: 420px;
+    margin: 48px auto;
+    background: #fff;
+    border-radius: 32px;
+    box-shadow: 0 8px 32px rgba(255, 105, 0, 0.12);
+    padding: 40px 32px 32px 32px;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+.main-title {
+    font-size: 2.8rem;
+    color: #ff5722;
+    margin-bottom: 36px;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px #ffd6c2;
+}
+.big-options {
+    display: flex;
+    justify-content: center;
+    gap: 36px;
+    margin-bottom: 32px;
+}
+.option-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 220px;
+    height: 130px;
+    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    border-radius: 24px;
+    box-shadow: 0 4px 16px rgba(255, 87, 34, 0.12);
+    font-size: 2.1rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+.option-card.food-card::before {
+    content: '';
+    background-image: url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png');
+    background-size: 60px 60px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    width: 60px;
+    height: 60px;
+    opacity: 0.18;
+}
+.option-card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(255, 87, 34, 0.18);
+}
+.card-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    justify-content: center;
+    margin-bottom: 32px;
+}
+.card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 220px;
+    height: 90px;
+    background: linear-gradient(135deg, #fffde4 0%, #ffd6c2 100%);
+    border-radius: 18px;
+    box-shadow: 0 2px 12px rgba(255, 87, 34, 0.10);
+    color: #ff5722;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: 700;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+    padding-left: 24px;
+}
+.card-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+.card:hover {
+    transform: scale(1.07);
+    box-shadow: 0 8px 32px rgba(255, 87, 34, 0.18);
+    background: linear-gradient(135deg, #ffd6c2 0%, #fffde4 100%);
+    color: #d84315;
+}
+.order-form {
+    margin-top: 32px;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+}
+.order-form label {
+    font-weight: 600;
+    color: #ff5722;
+    margin-bottom: 8px;
+    display: block;
+}
+.order-form input, .order-form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 16px;
+    border-radius: 8px;
+    border: 1px solid #ffd6c2;
+    font-size: 1rem;
+    background: #fffde4;
+}
+.order-btn {
+    background: linear-gradient(135deg, #ff5722 0%, #ff9800 100%);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 32px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: background 0.2s;
+    box-shadow: 0 2px 8px rgba(255, 87, 34, 0.10);
+}
+.order-btn.active-filter {
+    background: #ff5722 !important;
+    color: #fff !important;
+}
+.order-btn:not(.active-filter) {
+    background: #eee !important;
+    color: #ff5722 !important;
+    border: 1px solid #ffd6c2;
+}
+.order-btn:hover {
+    background: linear-gradient(135deg, #ff9800 0%, #ff5722 100%);
+}
+.back-link {
+    display: inline-block;
+    margin-top: 32px;
+    color: #ff5722;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.1rem;
+    letter-spacing: 1px;
+}
+.back-link:hover {
+    text-decoration: underline;
+    color: #d84315;
+}

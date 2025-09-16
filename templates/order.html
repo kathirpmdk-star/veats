@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order Food</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Checkout</h1>
+        {% if cart and cart|length > 0 %}
+        <table style="width:100%;margin-bottom:24px;">
+            <tr>
+                <th>Item</th>
+                <th>Shop</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.shop_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>₹{{ item.price }}</td>
+                <td>₹{{ item.price * item.quantity|int }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Total: ₹{{ total }}</h2>
+        <form method="post" class="order-form">
+            <label for="payment">Select Payment Method:</label>
+            <select name="payment" id="payment" required>
+                <option value="upi">UPI</option>
+                <option value="card">Card</option>
+                <option value="cod">Cash on Delivery</option>
+            </select>
+            <br>
+            <button type="submit" class="order-btn">Pay & Place Order</button>
+        </form>
+        {% else %}
+        <p>Your cart is empty.</p>
+        {% endif %}
+        <a href="/cart" class="back-link">Back to Cart</a>
+    </div>
+</body>
+</html>

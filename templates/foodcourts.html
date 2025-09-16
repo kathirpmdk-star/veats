@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Select Food Court</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="food-bg"></div>
+    <div class="container">
+        <h1 class="main-title">Select Food Court</h1>
+        <div class="card-list">
+            {% for court in food_courts %}
+            <a class="card" href="/foodcourts/{{ court.id }}">
+                <div class="card-title">{{ court.name }}</div>
+            </a>
+            {% endfor %}
+        </div>
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

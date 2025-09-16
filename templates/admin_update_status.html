@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Update Order Status - Admin</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Update Order Status</h1>
+        <form method="post" class="order-form">
+            <label for="order_no">Order Number:</label>
+            <input type="text" name="order_no" id="order_no" required>
+            <label for="status">Status:</label>
+            <select name="status" id="status" required>
+                <option value="Order Placed">Order Placed</option>
+                <option value="Preparing">Preparing</option>
+                <option value="Ready for Pickup">Ready for Pickup</option>
+                <option value="Collected">Collected</option>
+            </select>
+            <button type="submit" class="order-btn">Update Status</button>
+        </form>
+        {% if message %}<p style="color:green;">{{ message }}</p>{% endif %}
+        <a href="/" class="back-link">Back to Home</a>
+    </div>
+</body>
+</html>

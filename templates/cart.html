@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Cart - VEats</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="main-title">Your Cart</h1>
+        {% if cart and cart|length > 0 %}
+        <table style="width:100%;margin-bottom:24px;">
+            <tr>
+                <th>Item</th>
+                <th>Shop</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Total</th>
+            </tr>
+            {% for item in cart %}
+            <tr>
+                <td>{{ item.item_name }}</td>
+                <td>{{ item.shop_name }}</td>
+                <td>{{ item.quantity }}</td>
+                <td>₹{{ item.price }}</td>
+                <td>₹{{ item.price * item.quantity|int }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <h2>Total: ₹{{ total }}</h2>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: 10px; flex-wrap: wrap;">
+            <div style="display: flex; gap: 8px;">
+                <a href="/clear_cart" class="order-btn" style="background:#eee;color:#ff5722;font-size:0.85rem;padding:6px 14px;min-width:80px;">Clear Cart</a>
+                <a href="/foodcourts" class="order-btn" style="background:#eee;color:#ff5722;font-size:0.85rem;padding:6px 14px;min-width:80px;">Back to Food Courts</a>
+            </div>
+            <a href="/order" class="order-btn" style="font-size:0.85rem;padding:6px 14px;min-width:120px;">Proceed to Payment</a>
+        </div>
+    {% else %}
+    <p>Your cart is empty.</p>
+    <a href="/foodcourts" class="order-btn" style="font-size:0.95rem;padding:6px 18px;min-width:120px;">Back to Food Courts</a>
+    {% endif %}
+    </div>
+</body>
+</html>
